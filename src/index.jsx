@@ -22,6 +22,8 @@ const main = async () => {
 
   core.endGroup()
 
+  console.log(core.exportVariable);
+  console.log(process.env)
 
   const rootPath = core.getInput("root_path") || ""; // Micro and minimatch do not support paths starting with ./
   const maxDepth = core.getInput("max_depth") || 9

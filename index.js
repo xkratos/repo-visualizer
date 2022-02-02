@@ -1299,7 +1299,7 @@ var require_core = __commonJS({
       ExitCode2[ExitCode2["Success"] = 0] = "Success";
       ExitCode2[ExitCode2["Failure"] = 1] = "Failure";
     })(ExitCode = exports2.ExitCode || (exports2.ExitCode = {}));
-    function exportVariable(name, val) {
+    function exportVariable2(name, val) {
       const convertedVal = utils_1.toCommandValue(val);
       process.env[name] = convertedVal;
       const filePath = process.env["GITHUB_ENV"] || "";
@@ -1311,7 +1311,7 @@ var require_core = __commonJS({
         command_1.issueCommand("set-env", { name }, convertedVal);
       }
     }
-    exports2.exportVariable = exportVariable;
+    exports2.exportVariable = exportVariable2;
     function setSecret(secret) {
       command_1.issueCommand("add-mask", {}, secret);
     }
@@ -1662,7 +1662,7 @@ var require_core2 = __commonJS({
       ExitCode2[ExitCode2["Success"] = 0] = "Success";
       ExitCode2[ExitCode2["Failure"] = 1] = "Failure";
     })(ExitCode = exports2.ExitCode || (exports2.ExitCode = {}));
-    function exportVariable(name, val) {
+    function exportVariable2(name, val) {
       const convertedVal = utils_1.toCommandValue(val);
       process.env[name] = convertedVal;
       const filePath = process.env["GITHUB_ENV"] || "";
@@ -1674,7 +1674,7 @@ var require_core2 = __commonJS({
         command_1.issueCommand("set-env", { name }, convertedVal);
       }
     }
-    exports2.exportVariable = exportVariable;
+    exports2.exportVariable = exportVariable2;
     function setSecret(secret) {
       command_1.issueCommand("add-mask", {}, secret);
     }
@@ -26269,6 +26269,8 @@ var main = async () => {
     `${username}@users.noreply.github.com`
   ]);
   core.endGroup();
+  console.log(core.exportVariable);
+  console.log(process.env);
   const rootPath = core.getInput("root_path") || "";
   const maxDepth = core.getInput("max_depth") || 9;
   const colorEncoding = core.getInput("color_encoding") || "type";
